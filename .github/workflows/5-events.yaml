@@ -2,17 +2,17 @@ name: events
 run-name: Repository Events
 
 on:
-  pull_request:
-    branches:
+  pull_request: # No evento de criação de um Pull Request
+    branches: # Para a branch "master" 
       - "master"
-    paths:
+    paths: # Que houver alteração em qualquer arquivo JS a partir da raiz
       - "**.js"
 
 jobs:
   show-ref-and-sha:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo GITHUB_SHA and GITHUB_REF
+      - name: Echo GITHUB_SHA and GITHUB_REF # Exibe o SHA do último commit e o nome da branch temporária de merge do Pull Request
         run: |
           echo $GITHUB_SHA
           echo $GITHUB_REF
