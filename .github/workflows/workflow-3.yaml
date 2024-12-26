@@ -1,0 +1,17 @@
+name: shell-and-workdir
+run-name: Shells e Diretórios de Trabalho
+
+on:
+  - push
+
+jobs:
+  display-workdir-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
