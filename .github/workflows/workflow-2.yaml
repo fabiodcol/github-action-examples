@@ -1,5 +1,5 @@
 name: parallel-dependent-jobs
-run-name: Jobs paralelos e dependentes
+run-name: Jobs - Parallel and dependents
 
 on:
   - push

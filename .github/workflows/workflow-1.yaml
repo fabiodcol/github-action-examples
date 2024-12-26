@@ -1,5 +1,5 @@
-name: workflow-1  # Identificador para o Workflow
-run-name: Primeiro Workflow # Descrição para o Workflow
+name: simple-workflow # Identificador para o Workflow
+run-name: Simple Workflow # Descrição para o Workflow
 
 on: # Lista de eventos que dispara o Workflow
   - push # Ao realizar um push ao repositório...
