@@ -1,12 +1,12 @@
-name: workflow-1
-run-name: Primeiro Workflow
+name: workflow-1  # Identificador para o Workflow
+run-name: Primeiro Workflow # Descrição para o Workflow
 
-on:
-  - push
+on: # Lista de eventos que dispara o Workflow
+  - push # Ao realizar um push ao repositório...
 
-jobs:
-  run-shell-commands:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Hello World
-        run: echo "Hello World"
+jobs: # Lista de Jobs. Por padrão, todos os Jobs rodam paralelamente.
+  run-shell-commands: # Identificador para o Job
+    runs-on: ubuntu-latest # Definição para o GitHub Hosted Runner
+    steps: # Lista de Steps
+      - name: Hello World # Descrição para o Step
+        run: echo "Hello World" # Comando para o Step
