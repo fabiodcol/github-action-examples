@@ -4,21 +4,21 @@ run-name: Shells and Workdir
 on:
   - push
 
-#defaults: # Define configurações padrão em nível de Workflow
+#defaults: # Define configurações padrão aplicáveis em todo Workflow
 #  run: # Define configurações de execução de comandos
 #    shell: pwsh # Indica qual terminal shell será usado
-#    working-directory: ./temp # Indica qual o Workdir a ser usado
+#    working-directory: ./temp # Indica qual o Workdir à ser usado
 
 jobs:
   display-workdir-info:
-    #defaults: # Define configurações padrão em nível de Jobs
+    #defaults: # Define configurações padrão aplicáveis à um Job
     #  run: # Define configurações de execução de comandos
     #    shell: pwsh # Indica qual terminal shell será usado
-    #    working-directory: ./temp # Indica qual o Workdir a ser usado
+    #    working-directory: ./temp # Indica qual o Workdir à ser usado
     runs-on: ubuntu-latest
     steps:
       - name: Display workdir and list files
-        shell: pwsh
+        shell: pwsh # Indica qual terminal shell será usado para os Steps
         run: |
           pwd
           ls -a
@@ -27,8 +27,8 @@ jobs:
           echo $GITHUB_WORKSPACE
       
       - name: Python Shell
-        shell: python # Indica qual terminal shell será usado
-        # working-directory: ./temp # Indica qual o Workdir a ser usado
+        shell: python # Indica qual terminal shell será usado para os Steps
+        # working-directory: ./temp # Indica qual o Workdir à ser usado
         run: |
           import platform
           print(platform.processor())
