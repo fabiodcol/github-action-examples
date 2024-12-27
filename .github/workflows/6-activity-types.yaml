@@ -1,0 +1,13 @@
+name: activity-types-and-filters
+run-name: Actitity Types and Filters
+
+on:
+  issues: # No evento de Issue
+    types: [opened, edited] # Para o status de aberto ou editado
+
+jobs:
+  show-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show message
+        run: echo 'New issue/Edited issue'

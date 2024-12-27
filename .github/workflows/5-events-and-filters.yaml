@@ -1,11 +1,11 @@
-name: events
-run-name: Repository Events
+name: events-and-filters
+run-name: Repository Events and Filters
 
 on:
   pull_request: # No evento de criação de um Pull Request
-    branches: # Para a branch "master" 
+    branches: # Filtro: Para a branch de destino "master" 
       - "master"
-    paths: # Que houver alteração em qualquer arquivo JS a partir da raiz
+    paths: # Filtro: Que houver alteração em qualquer arquivo JS a partir da raiz
       - "**.js"
 
 jobs:
