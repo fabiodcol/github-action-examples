@@ -1,0 +1,17 @@
+name: manually-with-input
+run-name: Manual Workflow
+
+on:
+  workflow_dispatch: # Ao se declarar o evento "workflow_dispatch", o GitHub Actions já exibirá o botão para o disparo manual do Workflow.
+    inputs: # O evento "workflow_dispatch", disponibiliza a opção de um contexto de "input", que permite uma entrada do usuário
+      message: # Nome para o contexto
+        description: Messagem a ser exibida no terminal # Descrição para o contexto
+        type: string # Tipo de entrada
+        required: true # Obrigatório    
+        default: "Olá Mundo" # Valor padrão
+
+jobs:
+  echo-string:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ inputs.message }} # Exibindo a captura da entrada do usuário pelo contexto "message"
